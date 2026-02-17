@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>WasteAware - Clean Streets, Clear Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="max-width-container flex items-center justify-between" style="padding: 1rem 1.5rem;">
+            <a href="#" onclick="navigate('home')" class="flex items-center gap-2" style="text-decoration: none; color: inherit;">
+                <div style="background: var(--primary); width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <span class="material-symbols-outlined" style="font-weight: bold;">delete_sweep</span>
+                </div>
+                <h2 style="font-size: 1.125rem; font-weight: 800;">Street Waste Awareness</h2>
+            </a>
+            <div class="flex items-center gap-8">
+                <nav class="hidden md-flex gap-8">
+                    <a href="#" onclick="navigate('home')" id="nav-home">Inicio</a>
+                    <a href="impact.html" id="nav-impact">Impacto</a>
+                    <a href="#" onclick="navigate('join')" id="nav-join">Únete</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button onclick="toggleDarkMode()" style="background: none; border: none; cursor: pointer; padding: 0.5rem; border-radius: 50%; display: flex;">
+                        <span class="material-symbols-outlined" id="dark-icon">dark_mode</span>
+                    </button>
+                    <a href="#" onclick="navigate('join')" class="btn-primary hidden md-flex">Únete ahora</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="home" class="page active">
+        <main class="max-width-container">
+            <section class="hero">
+                <div class="hero-img"></div>
+                <div>
+                    <h1 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem;">Calles Limpias,<br><span style="color: var(--primary);">Futuro Brillante</span></h1>
+                    <p style="color: var(--muted); font-size: 1.25rem; margin-bottom: 2rem; max-width: 500px;">Únete al movimiento para recuperar nuestros espacios urbanos de los residuos y construir un entorno sostenible.</p>
+                    <div class="flex gap-4">
+                        <button onclick="navigate('join')" class="btn-primary" style="height: 56px; padding: 0 2rem;">Empezar Ahora</button>
+                        <button onclick="navigate('impact')" style="height: 56px; padding: 0 2rem; background: none; border: 1px solid var(--primary); color: inherit; font-weight: 700; border-radius: 0.75rem; cursor: pointer;">Ver Impacto</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="flex items-center justify-between" style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 1.875rem; font-weight: 800;">Comunidades en Acción</h2>
+                    <div class="flex gap-2">
+                        <button onclick="scrollCarousel(-300)" style="background: none; border: 1px solid var(--border-light); padding: 0.5rem; border-radius: 50%; cursor: pointer;"><span class="material-symbols-outlined">chevron_left</span></button>
+                        <button onclick="scrollCarousel(300)" style="background: none; border: 1px solid var(--border-light); padding: 0.5rem; border-radius: 50%; cursor: pointer;"><span class="material-symbols-outlined">chevron_right</span></button>
+                    </div>
+                </div>
+                <div class="carousel-container" id="home-carousel">
+                    <div class="carousel-item card">
+                        <div style="height: 200px; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFdqwHNiRZ6yAhEDElZdNn7GX9Tyy8B_Ek7bHcxet1iNHLuJr6dL8BrlHKsSw17Si-vUfShYN77btncg8l3Pnsyyuh-Eh84EFFkkD3ZVAFH5ORZ_b3aP44SlIe8ckTAVbQ87mk42OvOnAWi8SvKhUXIYaP5iL4ZZM1HDmFuXZCj5q6Kz6Rg1CY8q8fr-BH0zSNvi3s65CAT-ZyWngKcs0Qc7DVBBkIbaMsyIEen_-4_veMjb5OcProjeAnQxOEkY8ajwkXTfCNj9nI') center/cover; border-radius: 0.5rem; margin-bottom: 1rem;"></div>
+                        <h3 style="margin-bottom: 0.5rem;">Restauración de Parques</h3>
+                        <p style="font-size: 0.875rem; color: var(--muted); margin-bottom: 1rem;">Más de 50 kg de residuos eliminados el pasado sábado por nuestro dedicado equipo.</p>
+                        <a href="#" onclick="navigate('join')" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.875rem;">Saber más →</a>
+                    </div>
+                    <div class="carousel-item card">
+                        <div style="height: 200px; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOB98nt_HN2IafGW3BTanCnvzYzmqNgpd5ZRoAuDUyyOTlYV95Yauyrmg11yDko62r0udyv2fFXkKlmeZffSJhpLDNqlbZfiPIED1lGRyIpa9Sr6AQQtC8TYmuf98bNOUEsWvuLUhhIrQSU4xtYDmx_v30YCfVA2Rb57vPjuFld6spYPphEjuW6nrEKFLP_Eja5RW-gIEHsorfvPpyu3w1RWIRsJBRBZID_qHg-ZvC72wHbOyVKWenjqZ5ZXa76uFkA5vJROytyJkM') center/cover; border-radius: 0.5rem; margin-bottom: 1rem;"></div>
+                        <h3 style="margin-bottom: 0.5rem;">Campaña de Voluntarios</h3>
+                        <p style="font-size: 0.875rem; color: var(--muted); margin-bottom: 1rem;">Únete a nuestras sesiones de fin de semana y conoce a vecinos con ideas afines.</p>
+                        <a href="#" onclick="navigate('join')" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.875rem;">Saber más →</a>
+                    </div>
+                    <div class="carousel-item card">
+                        <div style="height: 200px; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHcHriFbLyQv8kQ-5liWetAXBZ0uyOrbjwAoqnE2ENVU9fi7Xvx6gw6DoXqLd0YvlFQIlzdyQS7p8bkV0_4iYA_sU3utDQUjsKlvKeGmBrArFSiZhI2FFYES0DoyWRMVLmC2rYeBr5nEc0gL6z3wTNlT9qWINjMAcgDEB1S6RxDEoU9EoqzGJ7AhOy1jpQXNMKffB_BsZ0JjQwdEWZaFhuP8aUdHLsnx8_mb3tEcFqJoI_EQTP1To-5V09QGr3N5kwsu2MBamXzs6J') center/cover; border-radius: 0.5rem; margin-bottom: 1rem;"></div>
+                        <h3 style="margin-bottom: 0.5rem;">Limpieza de la Ciudad</h3>
+                        <p style="font-size: 0.875rem; color: var(--muted); margin-bottom: 1rem;">Transformando nuestras calles más concurridas en centros urbanos verdes.</p>
+                        <a href="#" onclick="navigate('join')" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.875rem;">Saber más →</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <div id="join" class="page">
+        <main class="max-width-container" style="padding-top: 2rem;">
+            <div style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9wajMKh8rJ0DaeChWo904MP_ry_xZeMSiCuWspRuFk4x7pL1xVwNMR4ZfZeCnlyQe_q8de1ldqE_ZIAota7W9NFTq5O2Dh7ERAczj4uudRS64hgYQSPJd_fQDOVqHIIldWeo6tkouPRigcmy1efZCIa2Nb76ILf5G3byccCzc1sEME9WQsUCyTmWVa-3HNNekdTxrWxMQiQJU5iRIyBqGnAgb8qNYdDx8qEn4bEjWEvJK1vtoSCroWWsr0bukM1UMrscp-TcqdZXH') center/cover; border-radius: 1.5rem; padding: 4rem 2rem; text-align: center; color: white;">
+                <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem;">Únete al Movimiento</h1>
+                <p style="max-width: 600px; margin: 0 auto 2rem; opacity: 0.9;">Transforma tu ciudad calle por calle. Reporta incidentes o asiste a eventos de limpieza.</p>
+                <button class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1rem;">Buscar Eventos</button>
+            </div>
+
+            <section class="section">
+                <h2 style="margin-bottom: 1.5rem;">Eventos Próximos</h2>
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div class="card">
+                        <div style="height: 180px; background: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDR32DfXp0W7Hwuvi8yrhBI7lmspEIDFMP0x0138aopBYEzUqtoChfG-3hSFuXnbrzCuW6k_HMDhlxdvq3fE1QffXmFZrg7kqtBkahdvjRgr2AJmN7167olzmtumGIziyZhLBgF9lOdKxUMLQdPIGsE0yTxRWbC75zTkE-6daclKFL753Wz79m2GZiUgQnZfPPluqNkUI5NNb_VrbyNXJrpT-Rg_yL9LvlcjjFr0-EofM18uT8TB-eoRzBCq565aieiqlXaov3w3PZs') center/cover; border-radius: 0.5rem; margin-bottom: 1rem;"></div>
+                        <h3 style="font-size: 1.125rem;">Limpieza Parque Centro</h3>
+                        <p style="font-size: 0.875rem; color: var(--muted); margin: 0.5rem 0;">12 Oct • 9:00 AM</p>
+                        <button class="btn-primary" style="width: 100%; margin-top: 1rem; background: rgba(19, 236, 91, 0.1); color: var(--primary);">Unirse</button>
+                    </div>
+                    <!-- More event cards could be here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="max-width-container">
+            <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 2rem;">
+                <div class="flex items-center gap-2">
+                    <div style="background: var(--primary); width: 24px; height: 24px; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                        <span class="material-symbols-outlined" style="font-size: 14px; font-weight: bold;">delete_sweep</span>
+                    </div>
+                    <span style="font-weight: 800; font-size: 0.875rem;">Street Waste Awareness</span>
+                </div>
+                <div class="flex gap-8" style="font-size: 0.75rem; color: var(--muted);">
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Contacto</a><i class="fa-brands fa-facebook-f fa-beat"></i>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-light); font-size: 0.75rem; color: var(--muted);">
+                © 2024 Street Waste Awareness Movement.
+            </div>
+        </div>
+    </footer>
+
+    <div class="fab" onclick="alert('Abrir formulario de reporte...')">
+        <span class="material-symbols-outlined" style="font-size: 2rem; color: #111813; font-weight: bold;">add</span>
+    </div>
+
+   <script src="javascript.js"></script>
+</body>
+</html>
